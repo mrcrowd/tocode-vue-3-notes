@@ -3,7 +3,7 @@ export const process = {
 }
 
 export const app = {
-  title: 'Template Vue'
+  title: 'Notes'
 }
 
 export const links = [
@@ -16,10 +16,5 @@ export const links = [
     title: 'About',
     alias: 'about',
     url: '/about'
-  },
-  {
-    title: 'Vacancy',
-    alias: 'vacancy',
-    url: '/vacancy'
   }
 ]
