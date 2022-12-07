@@ -22,7 +22,7 @@ export default {
   setup(props, { emit }) {
     const value = ref('')
     const tags = ['home', 'work', 'travel']
-    let activeTags = ref([])
+    const activeTags = ref([])
 
     const onSubmit = () => {
       const inputValue = value.value

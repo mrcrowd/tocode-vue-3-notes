@@ -26,12 +26,6 @@ export default {
       type: Array,
       required: false
     },
-    isActive: {
-      type: Boolean,
-      default() {
-        return false
-      }
-    },
     isPreview: {
       type: Boolean,
       default() {
@@ -39,10 +33,12 @@ export default {
       }
     }
   },
-  methods: {
-    contains: function (arr, item) {
+  setup() {
+    const contains = (arr, item) => {
       return arr && arr.indexOf(item) != -1
     }
+
+    return { contains }
   }
 }
 </script>
