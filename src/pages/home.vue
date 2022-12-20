@@ -4,42 +4,25 @@
 </template>
 
 <script>
-import { ref, watch, onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
 import Form from '@/components/Notes/Form'
 import List from '@/components/Notes/List'
 export default {
   components: { Form, List },
   setup() {
-    const notes = ref([])
-
-    const getNotes = () => {
-      const localNotes = localStorage.getItem('notes')
-      if (localNotes) {
-        notes.value = JSON.parse(localNotes)
-      }
-    }
-
-    onMounted(() => {
-      getNotes()
-    })
-
-    watch(
-      () => notes,
-      updatedList => {
-        localStorage.setItem('notes', JSON.stringify(updatedList.value))
-      },
-      { deep: true }
-    )
+    const store = useStore()
+    const notes = computed(() => store.getters.getNotes)
 
     const handleSubmit = item => {
       const note = {
         title: item.inputValue,
         tags: item.tags
       }
-      notes.value.push(note)
+      store.dispatch('addNote', note)
     }
 
-    const handleRemove = index => notes.value.splice(index, 1)
+    const handleRemove = index => store.dispatch('removeNote', index)
 
     return { notes, handleSubmit, handleRemove }
   }

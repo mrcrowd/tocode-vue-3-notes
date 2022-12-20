@@ -16,10 +16,8 @@
 import { links } from '@/_config'
 
 export default {
-  data() {
-    return {
-      links: links
-    }
+  setup() {
+    return { links }
   }
 }
 </script>

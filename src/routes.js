@@ -6,8 +6,8 @@ import {
 
 const routerHistory = createWebHashHistory()
 
-import HomePage from './pages/home.vue'
-import AboutPage from './pages/about.vue'
+import HomePage from '@/pages/home.vue'
+import AboutPage from '@/pages/about'
 import NotFoundPage from './pages/notFound.vue'
 
 const routers = createRouter({
