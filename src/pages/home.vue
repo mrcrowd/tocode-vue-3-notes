@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 import Form from '@/components/Notes/Form'
 import List from '@/components/Notes/List'

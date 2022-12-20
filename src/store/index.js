@@ -6,9 +6,6 @@ export const store = createStore({
     notes: lsGetItem('notes') ? lsGetItem('notes') : []
   },
   mutations: {
-    setNotes(state, notes) {
-      state.notes = notes
-    },
     removeNote(state, index) {
       state.notes.splice(index, 1)
     },
